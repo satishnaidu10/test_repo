@@ -1,0 +1,8 @@
+- hosts: webserver
+  user: root
+  sudo: yes
+  connection: ssh
+  tasks:
+    - include: includestat.yml
+    - name: verify the apache2 is installed
+      raw: apt list installed | grep apache2

@@ -1,0 +1,9 @@
+- name: started services by passing in loops
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: installing apache2 and vsftpd
+      service: name="{{item}}" state=stopped
+      with_items:
+        - apache2
+        - vsftpd

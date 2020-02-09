@@ -1,0 +1,12 @@
+- hosts: webserver
+  tasks:
+    - name: installing git 
+      apt: name=git state=latest
+      when: ansible_os_family == "Redhat"
+      tags:
+        - Murali      
+    - name: installing maven 
+      apt: name=maven state=latest
+      when: ansible_os_family == "Debian" 
+      tags:
+        - Satish      

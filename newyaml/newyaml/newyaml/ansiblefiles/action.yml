@@ -1,0 +1,8 @@
+- hosts: webserver 
+  become: yes
+  gather_facts: no
+  connection: ssh 
+  tasks:
+    - name: installing maven 
+      action: apt name=maven state=absent
+

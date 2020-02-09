@@ -1,0 +1,11 @@
+- hosts: webserver
+  become: yes
+  tasks:
+    - name: update the server 
+      apt:
+        upgrade=yes
+        update_cache=yes       
+    - name: installing mariadb 
+      apt:     
+        name: install mariadb
+        state: latest

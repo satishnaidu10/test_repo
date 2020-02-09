@@ -1,0 +1,14 @@
+- name: starting services by passing variables 
+  hosts: webserver
+  become: yes
+  vars:
+    webservices:      
+      - apache2
+      - vsftpd
+  tasks:
+    - name: start web services
+      service: 
+        name: "{{item}}"
+        state: started
+      with_items: "{{webservices}}"      
+                

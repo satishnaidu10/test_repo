@@ -1,0 +1,12 @@
+- name: creating users 
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: manage users and groups    
+      user:
+        name: "{{ item.name }}" 
+        state: present
+        group: "{{ item.group }}"
+      with_items:
+        - { name: 'linda', group: 'student' }   
+        - { name: 'anna', group: 'profs' }   

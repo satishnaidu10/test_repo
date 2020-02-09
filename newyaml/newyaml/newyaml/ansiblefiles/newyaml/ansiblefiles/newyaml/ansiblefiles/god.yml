@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: replaccing the file
+      replace:
+           src: /opt/sathish/chandra.txt   
+           dest: /opt/sathish/babu.txt

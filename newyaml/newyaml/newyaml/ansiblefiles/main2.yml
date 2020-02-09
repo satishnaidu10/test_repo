@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  #  vars_files:
+  #  - vars.yml
+  vars:
+     pkg1: "{{ package1 }}"
+     pkg2: "{{ package2 }}"
+  tasks:
+    - name: install some packages   
+      apt: 
+        name:  "{{pkg1}}"
+        name:  "{{pkg2}}"
+        state: present
+      
+

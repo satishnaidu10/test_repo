@@ -1,0 +1,6 @@
+- name:  install tomcat and deploy
+  hosts: webserver
+  tasks:
+    - name: install tocmcat
+      apt: name=tomcat state=latest
+

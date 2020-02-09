@@ -1,0 +1,14 @@
+- hosts: webserver
+  become: yes
+  tasks:
+    - name: installing multiple packages 
+      apt: name="{{item}}" state=absent
+      with_items:
+        - git
+        - docker.io
+        - apache2
+        - lynx
+        - tomcat
+        - ansible        
+
+
